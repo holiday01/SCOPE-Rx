@@ -39,17 +39,6 @@ SCOPE-Rx/
 │   ├── baselines/           # scDEAL / scPDS / Scaden-CA reproductions
 │   ├── novelty/             # T3a-T3k + T4 (core SCOPE-Rx pipeline)
 │   └── report/              # figures + PPT + graphical abstract
-├── results/
-│   ├── figures/             # 18 manuscript figures + graphical abstract
-│   ├── t3c/                 # 57 cell-state prototype tables
-│   ├── t3d/ t3e/ t3f/       # scoring layers (kill / oncology / pathway)
-│   ├── t3h/                 # multivariate Cox + tier ranking
-│   ├── t3j/                 # 3-cohort meta-analysis tables
-│   ├── t3k/                 # method consistency battery
-│   ├── t4/                  # final per-patient drug rankings + wet-lab brief
-│   └── phase1_final_report.md
-├── manuscript/              # LaTeX manuscript + cover letter + refs.bib
-├── literature/              # literature review + bib
 ├── environment.yml          # conda environment definition
 ├── LICENSE                  # MIT
 └── README.md                # this file
