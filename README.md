@@ -51,35 +51,22 @@ SCOPE-Rx/
 ├── LICENSE                      (MIT)
 ├── environment.yml              (conda env: Python 3.11 + PyTorch 2.10 + CUDA 12.8)
 ├── .gitignore
-├── scripts/
-│   ├── preprocess/              T2a — bulk drug-response + cell-line + scRNA gene-universe
-│   │   ├── t2a_prepare_hcc_drug_data.py
-│   │   ├── t2a_prepare_luad_drug_data.py
-│   │   └── t2a_fix_drug_catalog.py
-│   ├── baselines/               T2b/T2c — scDEAL, scPDS, Scaden-CA training
-│   ├── novelty/                 T3a–T3k — core SCOPE-Rx pipeline (MPNN, Geneformer, attention-deconv, scoring)
-│   ├── ablation/                Tier A/B/C ablation + MPNN held-out 5-fold CV
-│   ├── figures_main/            5 main figures + 6 supplementary figures + audit_numbers.py
-│   ├── report/                  PPT and graphical-abstract builders
-│   └── download/                Public-data download helpers (TCGA, GEO, DepMap)
-├── manuscript/                  paper.tex, supplementary.tex, cover_letter_CRM.tex, refs.bib
-├── results/
-│   ├── figures_main/            5 main figures + graphical abstract (PNG + PDF)
-│   ├── supp_figures/            6 supplementary figures (PNG + PDF)
-│   ├── audit_report.md          67/67 numerical assertions verified
-│   ├── citation_verification.md CrossRef DOI lookup of every cited reference
-│   ├── tables_main.{md,tex}     5 main tables in markdown + LaTeX booktabs
-│   ├── supplementary_index.md   Pointer index for 9 supplementary tables
-│   ├── target_journals.md       40 SCI journals matched to paper scope
-│   ├── expert_reviews.md        5 simulated expert reviews
-│   ├── SCOPE-Rx_LIHC_vs_LUAD_comparison.md
-│   ├── phase1_final_report.md   Phase-1 (LIHC) summary
-│   └── narrative.md             Manuscript writing guide
-├── configs/                     YAML configuration files
-└── notebooks/                   Exploratory analysis notebooks
+└── scripts/                     (48 Python scripts)
+    ├── preprocess/              Bulk drug-response + cell-line + scRNA gene-universe builders
+    │   ├── t2a_prepare_hcc_drug_data.py
+    │   ├── t2a_prepare_luad_drug_data.py
+    │   └── t2a_fix_drug_catalog.py
+    ├── baselines/               scDEAL, scPDS, Scaden-CA training (LIHC + LUAD)
+    ├── novelty/                 Core SCOPE-Rx pipeline: MPNN drug encoder, Geneformer
+    │                            embedding, attention deconvolution, per-prototype
+    │                            Cox scoring, pathway prior, meta-analysis, wet-lab brief
+    ├── ablation/                Tier A/B/C ablation + MPNN held-out 5-fold CV
+    ├── figures_main/            Main + supplementary figure builders + audit
+    │                            + citation verification
+    └── report/                  PPT and graphical-abstract builders
 ```
 
-Large intermediate parquet outputs, model checkpoints, raw scRNA atlases, and DepMap downloads are excluded from this repository; regenerate them by following the **Installation** and **Reproduction** sections.
+The repository ships only source code, the environment specification, and reproduction instructions. The manuscript and its supplementary materials are deposited with the publisher (and the bioRxiv preprint). Raw data, model weights, trained checkpoints, and intermediate result files are not included; obtain them via the **Installation** and **Reproduction** sections (Geneformer weights are downloaded automatically, all other data are public). Trained checkpoints and large intermediate result files will be released separately with a Zenodo DOI.
 
 ---
 
